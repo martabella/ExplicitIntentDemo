@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ExplicitIntentDemo</string>
+    <string name="hintText">Enter a message ....</string>
+    <string name="buttonSend">SEND</string>
 </resources>
