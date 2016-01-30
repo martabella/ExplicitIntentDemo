@@ -1,5 +1,6 @@
 package com.example.mbella.explicitintentdemo;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private EditText editText;
+    public final static String EXTRA_DATA ="MainActivity.data";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendMessage (View view){
-        Toast.makeText(this, editText.getText().toString(), Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+        intent.putExtra(EXTRA_DATA,editText.getText().toString());
+        startActivity(intent);
     }
 }
